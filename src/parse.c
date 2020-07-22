@@ -18,7 +18,7 @@ static int	valid_line(char *s)
 	return (1);
 }
 
-char		**file_parse(char *file)
+char		**parse(char *file)
 {
 	char	**map;
 	int		fd;

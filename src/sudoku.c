@@ -5,24 +5,26 @@ int main(int ac, char *av[])
 {
 	int		file_n;
 	char	**map;
+	char	**tmp;
 	int		solutions;
 
 	file_n = 0;
-	ft_putnbr(SUDOKU_SQUARE);
-	ft_putendl("");
 	while (file_n++ < ac - 1)
 	{
-		if (!(map = file_parse(av[file_n])))
+		if (!(map = parse(av[file_n])))
 		{
 			ft_putendl("Invalid map");
 			return (1);
 		}
-		/* ft_putstrtab(map = sudoku(map)); */
 		solutions = sudoku(map, 0);
 		ft_putstr("solutions :");
 		ft_putnbr(solutions);
 		ft_putendl("");
 		ft_putstrtab(map);
+		tmp = map;
+		while (*map)
+			ft_strdel(map++);
+		free(tmp);
 	}
 	return (0);
 }

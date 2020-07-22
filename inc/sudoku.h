@@ -11,8 +11,7 @@
 #define SUDOKU_SQUARE ft_sqrt(SUDOKU_SIZE)
 #define REPEAT 0
 
-char	**file_parse(char *file);
-int		parse(int ac, char **av);
+char	**parse(char *file);
 int		sudoku(char **map, int one);
 
 #endif
