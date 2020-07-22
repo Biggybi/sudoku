@@ -44,28 +44,3 @@ char		**file_parse(char *file)
 	map[SUDOKU_SIZE] = 0;
 	return (map);
 }
-
-int			nofile_parse(int ac, char **av)
-{
-	int		x;
-	int		y;
-
-	x = -1;
-	y = 0;
-	if (ac == 0 || !av)
-		return (0);
-	while (av[++y])
-	{
-		while (av[y][++x])
-		{
-			if (!(valid_char(av[y][x])))
-				return (-1);
-			if (x >= SUDOKU_SIZE)
-				return (-2);
-		}
-		if (y >= SUDOKU_SIZE + 1)
-			return (-3);
-		x = -1;
-	}
-	return (1);
-}
