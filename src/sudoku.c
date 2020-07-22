@@ -5,7 +5,6 @@ int main(int ac, char *av[])
 {
 	int		file_n;
 	char	**map;
-	char	**tmp;
 	int		solutions;
 
 	file_n = 0;
@@ -21,10 +20,9 @@ int main(int ac, char *av[])
 		ft_putnbr(solutions);
 		ft_putendl("");
 		ft_putstrtab(map);
-		tmp = map;
 		while (*map)
 			ft_strdel(map++);
-		free(tmp);
+		free(map - SUDOKU_SIZE);
 	}
 	return (0);
 }
